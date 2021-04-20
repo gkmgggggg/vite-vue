@@ -15,7 +15,8 @@ export default defineConfig({
   server: {
     port: 8080, // 端口号
     open: true, // 启动服务时是否自动打开游览器
-    cors: true // 允许跨域
+    cors: true, // 允许跨域
+    https: false // 是否开启 https
 
     // 设置代理
     // proxy: {
