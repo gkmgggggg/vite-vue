@@ -57,6 +57,27 @@ class Abstract {
   protected getReq ({ baseURL, headers, url, data, params, responseType }: AxiosRequest) {
     return this.apiAxios({ baseURL, headers, method: 'GET', url, data, params, responseType })
   }
+
+  /**
+   * POST类型的网络请求
+   */
+  protected postReq ({ baseURL, headers, url, data, params, responseType }: AxiosRequest) {
+    return this.apiAxios({ baseURL, headers, method: 'POST', url, data, params, responseType })
+  }
+
+  /**
+   * PUT类型的网络请求
+   */
+  protected putReq ({ baseURL, headers, url, data, params, responseType }: AxiosRequest) {
+    return this.apiAxios({ baseURL, headers, method: 'PUT', url, data, params, responseType })
+  }
+
+  /**
+   * DELETE类型的网络请求
+   */
+  protected deleteReq ({ baseURL, headers, url, data, params, responseType }: AxiosRequest) {
+    return this.apiAxios({ baseURL, headers, method: 'DELETE', url, data, params, responseType })
+  }
 }
 
 export default Abstract
