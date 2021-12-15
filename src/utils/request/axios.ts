@@ -19,7 +19,7 @@ const instance = axios.create({
   timeout: 100000,
   responseType: 'json'
 })
-let loadingInstance:any
+let loadingInstance: any
 
 // 移除重复请求
 const removePending = (config: AxiosRequestConfig) => {
@@ -96,7 +96,7 @@ instance.interceptors.response.use(
     // 超时重新请求
     const config = error.config
     // 全局的请求次数,请求的间隙
-    const [RETRY_COUNT, RETRY_DELAY] = [0, 1000]
+    const [RETRY_COUNT, RETRY_DELAY] = [5, 1000]
 
     if (config && RETRY_COUNT) {
       // 设置用于跟踪重试计数的变量

@@ -6,7 +6,7 @@ import { sleep } from './utils/common'
 
 const whiteList = ['/login', '/demo']
 const LOGIN_PATH = '/login'
-const path:string = import.meta.env.VUE_APP_LOGIN as string || LOGIN_PATH
+const path: string = import.meta.env.VUE_APP_LOGIN as string || LOGIN_PATH
 
 function toLogin (next: NavigationGuardNext) {
   if (/^http/.test(path)) {
