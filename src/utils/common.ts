@@ -24,3 +24,33 @@ export function getBrowser () {
     isChrome
   }
 }
+
+export function deepClone (source: any) {
+  if (!source || typeof source !== 'object') {
+    throw new Error('出错了')
+  }
+  const targetObj: any = source.constructor === Array ? [] : {}
+  Object.keys(source).forEach(key => {
+    if (source[key] && typeof source[key] === 'object') {
+      targetObj[key] = deepClone(source[key])
+    } else {
+      targetObj[key] = source[key]
+    }
+  })
+  return targetObj
+}
+
+export function uniqueArray (arr: any) {
+  return Array.from(new Set(arr))
+}
+
+export function toogleClass (element: HTMLElement, classname: string) {
+  let classString: string = element.className
+  const index = classString.indexOf(classname)
+  if (index === -1) {
+    classString += classname
+  } else {
+    classString = classString.substr(0, index) + classString.substr(index, classString.length)
+  }
+  element.className = classString
+}
