@@ -1,7 +1,7 @@
 interface UrlDictType {
   [key: string]: {
-    [key: string]: string;
-  };
+    [key: string]: string
+  }
 }
 
 const urlDict: UrlDictType = {

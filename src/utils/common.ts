@@ -1,10 +1,10 @@
-export function sleep (duration: number) {
+export function sleep(duration: number) {
   return new Promise(resolve => {
     setTimeout(resolve, duration)
   })
 }
 
-export function getBrowser () {
+export function getBrowser() {
   const userAgent = navigator.userAgent
   const isOpera = userAgent.indexOf('opera') !== -1
   const isEdge = userAgent.indexOf('Edge') !== -1
@@ -25,7 +25,7 @@ export function getBrowser () {
   }
 }
 
-export function deepClone (source: any) {
+export function deepClone(source: any) {
   if (!source || typeof source !== 'object') {
     throw new Error('出错了')
   }
@@ -40,11 +40,11 @@ export function deepClone (source: any) {
   return targetObj
 }
 
-export function uniqueArray (arr: any) {
+export function uniqueArray(arr: any) {
   return Array.from(new Set(arr))
 }
 
-export function toogleClass (element: HTMLElement, classname: string) {
+export function toogleClass(element: HTMLElement, classname: string) {
   let classString: string = element.className
   const index = classString.indexOf(classname)
   if (index === -1) {

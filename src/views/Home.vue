@@ -1,7 +1,5 @@
 <template>
-  <div>
-    Home
-  </div>
+  <div>Home</div>
 </template>
 
 <script lang="ts">
@@ -10,7 +8,7 @@ import { useStore } from 'vuex'
 import { basicApi } from '../api/index'
 
 export default defineComponent({
-  setup () {
+  setup() {
     const store = useStore()
     store.dispatch('countPlus')
     console.log(store.getters.count)
@@ -31,6 +29,4 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

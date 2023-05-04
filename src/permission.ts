@@ -6,9 +6,9 @@ import { sleep } from './utils/common'
 
 const whiteList = ['/login', '/demo']
 const LOGIN_PATH = '/login'
-const path: string = import.meta.env.VUE_APP_LOGIN as string || LOGIN_PATH
+const path: string = (import.meta.env.VUE_APP_LOGIN as string) || LOGIN_PATH
 
-function toLogin (next: NavigationGuardNext) {
+function toLogin(next: NavigationGuardNext) {
   if (/^http/.test(path)) {
     document.location.href = path
   } else {
@@ -39,7 +39,8 @@ router.beforeEach(async (to, from, next) => {
       toLogin(next)
     }
   } else {
-    if (whiteList.indexOf(to.path) !== -1) { //  白名单
+    if (whiteList.indexOf(to.path) !== -1) {
+      //  白名单
       next()
     } else {
       toLogin(next)

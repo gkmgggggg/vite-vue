@@ -7,10 +7,10 @@ import x from '../types/index'
 console.log(x)
 
 interface AuthLoginType {
-  account: string;
-  password: string;
-  captchaCode: string;
-  captchaCodeToken: string;
+  account: string
+  password: string
+  captchaCode: string
+  captchaCodeToken: string
 }
 
 class Basic extends Abstract {
@@ -21,7 +21,7 @@ class Basic extends Abstract {
    * @param {string} captchaCode 图形码
    * @param {string} captchaCodeToken 图形码token
    */
-  authLogin (data: AuthLoginType) {
+  authLogin(data: AuthLoginType) {
     return this.getReq({ url: 'Basic.AuthLogin', data })
   }
 }

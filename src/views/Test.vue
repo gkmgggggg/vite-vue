@@ -11,7 +11,7 @@ import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
   name: 'Vuex',
-  setup () {
+  setup() {
     const count = ref<number>(0)
     const increment = () => {
       count.value += 1
